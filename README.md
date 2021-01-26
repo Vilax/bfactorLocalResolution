@@ -12,17 +12,10 @@ The installation of bfactorLocalResolution is quite simple:
 git clone https://github.com/Vilax/bfactorLocalResolution.git
 ```
 
-2) Open de folder XX and execute the file install.sh. This file will download xmipp and will install it for you, as well as, it will create a virtual enviroment with all required dependencies to run bfactorLocalResolution
+2) Open de folder bfactorLocalResolution and execute the file install.sh. This file will download xmipp and will install it for you, as well as, it will create a virtual enviroment with all required dependencies to run bfactorLocalResolution
 
 ```
-cd XXX
+cd bfactorLocalResolution
 ./install.sh
 ```
-
-
-
-
-
-# Example of use
-
 
