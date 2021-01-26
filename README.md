@@ -16,6 +16,6 @@ git clone https://github.com/Vilax/bfactorLocalResolution.git
 
 ```
 cd bfactorLocalResolution
-./install.sh
+. install.sh
 ```
 
