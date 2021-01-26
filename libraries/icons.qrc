@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>icons/cite.png</file>
+        <file>icons/help.png</file>
+        <file>icons/helpblue.png</file>
+        <file>icons/open.png</file>
+        <file>icons/openfolder.png</file>
+        <file>icons/path.png</file>
+        <file>icons/see.png</file>
+        <file>icons/yale.png</file>
+        <file>icons/xmipp_logo.png</file>
+    </qresource>
+</RCC>
