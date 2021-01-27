@@ -14,7 +14,15 @@ echo " "
 
 cd xmipp
 chmod +x xmipp
-./xmipp
+./xmipp get_devel_sources vi_bflr
+./xmipp config 
+./xmipp check_config
+./xmipp get_dependencies
+./xmipp compile
+mkdir build
+./xmipp install build/
+
+
 cd ..
 
 echo " "
