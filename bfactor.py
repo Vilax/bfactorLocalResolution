@@ -20,7 +20,7 @@ class Ui(QtWidgets.QMainWindow):
         configFile.read('config.ini')
 
         self.xmippPath = configFile['EXTERNAL_PROGRAMS']['XMIPP_PATH']
-        self.chimeraPath = configFile['EXTERNAL_PROGRAMS']['CHIMERA_PATH']
+        self.chimeraPath = None
 
         self.pathApp = os.getcwd()
         self.resultsPath = self.pathApp + "/results/"
