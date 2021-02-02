@@ -147,7 +147,7 @@ class Ui(QtWidgets.QMainWindow):
         os.environ['XMIPP_HOME'] = self.xmippPath
         os.environ['PATH'] = self.xmippPath + '/bin' + ':' + os.environ['PATH']
         os.environ['LD_LIBRARY_PATH'] = self.xmippPath + '/lib' + ':' + os.environ['LD_LIBRARY_PATH']
-        print('entro')
+        print(xmippCmdline)
         os.system(xmippCmdline)
 
         self.analyze.setEnabled(True)
@@ -162,7 +162,7 @@ class Ui(QtWidgets.QMainWindow):
 
         ## Normal Parameters
         params = " --atmodel %s" % addcolonmrc(self.lineAtModel.text())
-        params = " --vol %s" % addcolonmrc(self.lineResMap.text())
+        params += " --vol %s" % addcolonmrc(self.lineResMap.text())
         params += " --sampling %s" % self.lineSampling.text()
 
         ## Advanced Parameters
