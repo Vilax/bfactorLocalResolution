@@ -223,9 +223,9 @@ class PlotLocalResolution_Bfactor(QtWidgets.QMainWindow):
         lr = mdDict[self.labelLocalResolution]
 
         im1 = plt.subplot(211)
-        plt.imshow(lr.reshape(1, len(lr)), cmap=plt.cm.viridis, extent=[lr[0], lr[-1],0,40])
+        plt.imshow(lr.reshape(1, len(lr)), cmap=plt.cm.viridis, extent=[lr[0], lr[len(lr)-1],0,40])
 
         plt.subplot(212)
-        plt.imshow(bf.reshape(1, len(bf)), cmap=plt.cm.viridis, extent=[bf[0], bf[-1],0,40])
+        plt.imshow(bf.reshape(1, len(bf)), cmap=plt.cm.viridis, extent=[bf[0], bf[len(bf)-1],0,40])
 
         plt.show()
