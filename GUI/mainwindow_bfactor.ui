@@ -168,7 +168,7 @@ background-color: rgb(0, 150, 128);</string>
       <item row="0" column="0">
        <widget class="QTabWidget" name="tabWidget">
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tabParams">
          <attribute name="title">
@@ -382,7 +382,7 @@ background-color: rgb(0, 150, 128);</string>
             <item row="1" column="1">
              <layout class="QHBoxLayout" name="horizontalLayout_9">
               <item alignment="Qt::AlignLeft">
-               <widget class="QRadioButton" name="radioButton_2">
+               <widget class="QRadioButton" name="checkMedianYes">
                 <property name="text">
                  <string>Yes</string>
                 </property>
