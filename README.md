@@ -19,6 +19,23 @@ cd bfactorLocalResolution
 . install.sh
 ```
 
+# Execution/use
+
+To launch the program it only requires to active the virtual enviroment. You can do that as it follows
+
+
+```
+source env/bin/activate
+```
+
+Now, to launch the program
+
+```
+python bfactor.py
+```
+
+
+
 # Troubleshooting
 
 If the error comes from the compilation of xmipp, perhaps one of the next libraries is needed. At least in ubuntu:
