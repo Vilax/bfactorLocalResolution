@@ -78,10 +78,10 @@ class Ui(QtWidgets.QMainWindow):
 
         ## ADVANCE PARAMETERS
         # Checkbox Use median
-        #self.checkMedian_Yes = self.findChild(QtWidgets.QRadioButton, 'checkMedianYes')
-        #self.checkMedian_No = self.findChild(QtWidgets.QRadioButton, 'checkMedianNo')
-        #self.checkMedian_Yes.toggled.connect(self.passToggledMedian)
-        #self.checkMedian_No.toggled.connect(self.passToggledMedian)
+        self.checkMedian_Yes = self.findChild(QtWidgets.QRadioButton, 'checkMedianYes')
+        self.checkMedian_No = self.findChild(QtWidgets.QRadioButton, 'checkMedianNo')
+        self.checkMedian_Yes.toggled.connect(self.passToggledMedian)
+        self.checkMedian_No.toggled.connect(self.passToggledMedian)
 
         self.show()
 
@@ -93,7 +93,7 @@ class Ui(QtWidgets.QMainWindow):
             self.labelFSCNormalize.hide()
             self.lineFSC.hide()
 
-    """
+    
     def passToggledMedian(self):
         if self.checkMedian_Yes.isChecked():
             self.labelFSCNormalize.show()
@@ -101,7 +101,7 @@ class Ui(QtWidgets.QMainWindow):
         else:
             self.labelFSCNormalize.hide()
             self.lineFSC.hide()
-    """
+    
 
     def browsePath(self):
         self.pathApp = QFileDialog.getExistingDirectory(self, "Set working directory",
@@ -166,8 +166,8 @@ class Ui(QtWidgets.QMainWindow):
         params += " --sampling %s" % self.lineSampling.text()
 
         ## Advanced Parameters
-        #if self.checkMedian_Yes.isChecked():
-        #    params += " --median %s"
+        if self.checkMedian_Yes.isChecked():
+            params += " --median "
 
         if self.checkNormalizeYes.isChecked():
             params += " --fscResolution %s" % self.lineFSC.text()
