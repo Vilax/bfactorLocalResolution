@@ -224,8 +224,10 @@ class PlotLocalResolution_Bfactor(QtWidgets.QMainWindow):
 
         im1 = plt.subplot(211)
         plt.imshow(lr.reshape(1, len(lr)), cmap=plt.cm.viridis, extent=[r[0], r[-1],0,40])
+        plt.colorbar()
 
         plt.subplot(212)
         plt.imshow(bf.reshape(1, len(bf)), cmap=plt.cm.viridis, extent=[r[0], r[-1],0,40])
+        plt.colorbar()
 
         plt.show()
