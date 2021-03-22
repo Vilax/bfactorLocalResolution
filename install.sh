@@ -5,7 +5,7 @@
 # The first step is to download Xmipp-lite and compile it (Xmipp lite is a xmipp version without CUDA, python, just resolution related algorithms)
 
 echo "Cloning xmipp-lite repository..."
-git clone https://github.com/Vilax/xmipp.git
+git clone https://github.com/I2PC/xmipp.git
 
 echo " "
 echo " "
@@ -14,7 +14,7 @@ echo " "
 
 cd xmipp
 chmod +x xmipp
-./xmipp get_devel_sources vi_bflr
+./xmipp get_devel_sources
 ./xmipp config 
 ./xmipp check_config
 ./xmipp get_dependencies
