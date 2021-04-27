@@ -15,11 +15,13 @@ import icons
 # from confPaths import confPaths
 
 class Ui_AnalyzeResults(QtWidgets.QDialog):
-    def __init__(self, chimeraPath, resultsPath):
+    def __init__(self, chimeraPath, resultsPath, limlow, limup):
         super(Ui_AnalyzeResults, self).__init__()
         #uic.loadUi('GUI/analyzewindow_v0.ui', self)
         self.chimeraPath = chimeraPath
         self.resultsPath = resultsPath
+        self.limlower = limlow
+        self.limupper = limup
         
         #self.show()
 
@@ -33,4 +35,4 @@ class Ui_AnalyzeResults(QtWidgets.QDialog):
         localResolution = '_localresolutionResidue'
 
         title = 'Local Resolution - bfactor'
-        self.ui = PlotLocalResolution_Bfactor(pathFile,  residue, BFactor, localResolution, labelX_Residue, labelY_bfactor, labelY_locres, title)
+        self.ui = PlotLocalResolution_Bfactor(pathFile,  residue, BFactor, localResolution, labelX_Residue, labelY_bfactor, labelY_locres, title, self.limlower, self.limupper)

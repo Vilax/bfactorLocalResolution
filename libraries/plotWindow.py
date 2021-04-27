@@ -203,7 +203,7 @@ class PlotAngular(QtWidgets.QMainWindow):
 
 class PlotLocalResolution_Bfactor(QtWidgets.QMainWindow):
 
-    def __init__(self, mdFile, residue, BFactor, localResolution, residueLabel, BFactorLabel, localResolutionLabel, title):
+    def __init__(self, mdFile, residue, BFactor, localResolution, residueLabel, BFactorLabel, localResolutionLabel, title, lowlim, upperlim):
         super(PlotLocalResolution_Bfactor, self).__init__()
 
         self.mdFile = mdFile
@@ -215,6 +215,8 @@ class PlotLocalResolution_Bfactor(QtWidgets.QMainWindow):
         self.labelPlotBfactor = BFactorLabel
         self.labelPlotLocalResolution = localResolutionLabel
         self.title = title
+        self.lowlim = lowlim
+        self.upperlim = upperlim
 
         mdDict = readMetaData(self.mdFile)
 
@@ -223,7 +225,10 @@ class PlotLocalResolution_Bfactor(QtWidgets.QMainWindow):
         lr = mdDict[self.labelLocalResolution]
 
         im1 = plt.subplot(211)
-        plt.imshow(lr.reshape(1, len(lr)), cmap=plt.cm.viridis, extent=[r[0], r[-1],0,40])
+        if ((self.lowlim is None) or (self.upperlim is None)):
+            plt.imshow(lr.reshape(1, len(lr)), cmap=plt.cm.viridis, extent=[r[0], r[-1], 0, 40])
+        else:
+            plt.imshow(lr.reshape(1, len(lr)), vmin=self.lowlim, vmax=self.lowlim, cmap=plt.cm.viridis, extent=[r[0], r[-1],0,40])
         plt.colorbar()
 
         plt.subplot(212)

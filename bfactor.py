@@ -83,6 +83,15 @@ class Ui(QtWidgets.QMainWindow):
         self.checkMedian_Yes.toggled.connect(self.passToggledMedian)
         self.checkMedian_No.toggled.connect(self.passToggledMedian)
 
+        self.checkVisualization_Yes = self.findChild(QtWidgets.QRadioButton, 'checkVisualizationYes')
+        self.checkVisualization_No = self.findChild(QtWidgets.QRadioButton, 'checkVisualizationNo')
+        self.checkVisualization_Yes.toggled.connect(self.passToggledVisualization)
+        self.checkVisualization_No.toggled.connect(self.passToggledVisualization)
+        self.labelLower.hide()
+        self.lineLower.hide()
+        self.labelUpper.hide()
+        self.lineUpper.hide()
+
         self.show()
 
     def passToggledNormalize(self):
@@ -94,6 +103,18 @@ class Ui(QtWidgets.QMainWindow):
             self.lineFSC.hide()
 
     
+    def passToggledVisualization(self):
+        if self.checkVisualization_Yes.isChecked():
+            self.labelLower.show()
+            self.lineLower.show()
+            self.labelUpper.show()
+            self.lineUpper.show()
+        else:
+            self.labelLower.hide()
+            self.lineLower.hide()
+            self.labelUpper.hide()
+            self.lineUpper.hide()
+
     def passToggledMedian(self):
         if self.checkMedian_Yes.isChecked():
             self.labelFSCNormalize.show()
@@ -101,7 +122,6 @@ class Ui(QtWidgets.QMainWindow):
         else:
             self.labelFSCNormalize.hide()
             self.lineFSC.hide()
-    
 
     def browsePath(self):
         self.pathApp = QFileDialog.getExistingDirectory(self, "Set working directory",
@@ -154,7 +174,13 @@ class Ui(QtWidgets.QMainWindow):
 
     def analyzeButton(self):
         self.window = QtWidgets.QMainWindow()
-        self.ui = Ui_AnalyzeResults(self.chimeraPath, self.resultsPath)
+        lowerlim = None
+        upperlim = None
+        if self.checkVisualization_Yes.isChecked():
+            lowerlim = float(self.lineLower.text())
+            upperlim = float(self.lineUpper.text())
+
+        self.ui = Ui_AnalyzeResults(self.chimeraPath, self.resultsPath, lowerlim, upperlim)
 
     def createXmippScript(self):
         program = "xmipp_resolution_pdb_bfactor" \
