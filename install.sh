@@ -50,7 +50,7 @@ echo "[EXTERNAL_PROGRAMS]" >> $INITFILE
 echo "XMIPP_PATH = ${PWD}${XMIPP_PATH}" >> $INITFILE
 
 
-EXECUTABLEFILE="FSO"
+EXECUTABLEFILE="bfactor"
 echo "cd $(pwd)" >> $EXECUTABLEFILE
 echo "$(pwd)/bfactor.py" >> $EXECUTABLEFILE
 chmod +x ${EXECUTABLEFILE}
