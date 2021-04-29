@@ -193,7 +193,7 @@ class Ui(QtWidgets.QMainWindow):
 
         ## Advanced Parameters
         if self.checkMedian_Yes.isChecked():
-            params += " --hasMedian "
+            params += " --useMedian "
 
         if self.checkNormalizeYes.isChecked():
             params += " --fscResolution %s" % self.lineFSC.text()
