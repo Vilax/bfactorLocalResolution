@@ -228,7 +228,7 @@ class PlotLocalResolution_Bfactor(QtWidgets.QMainWindow):
         if ((self.lowlim is None) or (self.upperlim is None)):
             plt.imshow(lr.reshape(1, len(lr)), cmap=plt.cm.viridis, extent=[r[0], r[-1], 0, 40])
         else:
-            plt.imshow(lr.reshape(1, len(lr)), vmin=self.lowlim, vmax=self.lowlim, cmap=plt.cm.viridis, extent=[r[0], r[-1],0,40])
+            plt.imshow(lr.reshape(1, len(lr)), vmin=self.lowlim, vmax=self.upperlim, cmap=plt.cm.viridis, extent=[r[0], r[-1],0,40])
         plt.colorbar()
 
         plt.subplot(212)
